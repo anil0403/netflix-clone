@@ -32,7 +32,7 @@ export const authOptions: AuthOptions = {
         },
       },
       async authorize(credentials) {
-        console.log("authorizing")
+        console.log("authorizing");
         console.log(`${credentials?.email}`);
         console.log(`${credentials?.password}`);
         if (!credentials?.email || !credentials?.password) {
@@ -70,7 +70,7 @@ export const authOptions: AuthOptions = {
   pages: {
     signIn: "/auth",
   },
-  debug: process.env.NODE_ENV === "development",
+  debug: process.env.NODE_ENV === "production",
   adapter: PrismaAdapter(prismadb),
   session: { strategy: "jwt" },
   jwt: {

@@ -22,55 +22,6 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <div className="bg-gray-800">
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-        <div className="h-96"></div>
-
-      </div>
     </>
   );
 }
