@@ -29,7 +29,7 @@ const Auth = () => {
       const status = await signIn("credentials", {
         email,
         password,
-        redirect: true,
+        redirect: false,
         callbackUrl: "/profiles",
       });
       console.log(status);
