@@ -30,10 +30,10 @@ const Auth = () => {
         email,
         password,
         redirect: false,
-        callbackUrl: "/",
+        callbackUrl: "/profiles",
       });
-      console.log(status);
-      if (!status?.error) router.push("/");
+      // console.log(status);
+      if (!status?.error) router.push("/profiles");
     } catch (error) {
       console.log(error);
     }
@@ -99,7 +99,7 @@ const Auth = () => {
             </button>
             <div className="flex flex-row items-center justify-center gap-4 mt-8">
               <div
-              onClick={() => signIn("google", { callbackUrl: "/" })}
+                onClick={() => signIn("google", { callbackUrl: "/profiles" })}
                 className="
                 w-10
                 h-10
@@ -115,7 +115,7 @@ const Auth = () => {
                 <FcGoogle size={30} />
               </div>
               <div
-                onClick={() => signIn("github", { callbackUrl: "/" })}
+                onClick={() => signIn("github", { callbackUrl: "/profiles" })}
                 className="
                 w-10
                 h-10
