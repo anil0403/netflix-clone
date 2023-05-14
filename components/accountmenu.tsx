@@ -6,8 +6,8 @@ interface AccountMenuProps {
   visible?: boolean;
 }
 const AccountMenu: React.FC<AccountMenuProps> = ({ visible }) => {
-  if (!visible) return null;
   const { data: user } = useCurrentUser();
+  if (!visible) return null;
   return (
     <div className="bg-black w-52 absolute top-20 right-2 py-3 flex-col border-2 border-gray-800 flex">
       <div className="flex flex-col gap-3">
