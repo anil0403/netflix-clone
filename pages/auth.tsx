@@ -29,10 +29,10 @@ const Auth = () => {
       const status = await signIn("credentials", {
         email,
         password,
-        // redirect: false,
+        redirect: true,
         callbackUrl: "/profiles",
       });
-      // console.log(status);
+      console.log(status);
       // if (!status?.error) router.push("/profiles");
     } catch (error) {
       console.log(error);
