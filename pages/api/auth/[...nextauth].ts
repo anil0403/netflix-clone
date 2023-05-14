@@ -32,7 +32,10 @@ export const authOptions: AuthOptions = {
         },
       },
       async authorize(credentials) {
+        console.log(`${credentials?.email}`);
+        console.log(`${credentials?.password}`);
         if (!credentials?.email || !credentials?.password) {
+          console.log("Email and password required");
           throw new Error("Email and password required");
         }
 
@@ -43,6 +46,8 @@ export const authOptions: AuthOptions = {
         });
 
         if (!user || !user.hashedPassword) {
+          console.log("Email doesn't exist");
+
           throw new Error("Email does not exist");
         }
 
@@ -52,6 +57,8 @@ export const authOptions: AuthOptions = {
         );
 
         if (!isCorrectPassword) {
+          console.log("incorrect password");
+
           throw new Error("Incorrect password");
         }
 
