@@ -1,13 +1,11 @@
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
 
-import React from "react";
-
-const usefavorites = () => {
+const useFavorites = () => {
   const { data, error, isLoading, mutate } = useSWR("/api/favorites", fetcher, {
     revalidateIfStale: false,
     revalidateOnFocus: false,
-    revalidateOnReconnect: false, 
+    revalidateOnReconnect: false,
   });
   return {
     data,
@@ -17,4 +15,4 @@ const usefavorites = () => {
   };
 };
 
-export default usefavorites;
+export default useFavorites;

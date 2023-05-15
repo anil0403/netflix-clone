@@ -1,16 +1,16 @@
 import React, { useMemo, useCallback } from "react";
 import axios from "axios";
 import useCurrentUser from "@/hooks/useCurrentUser";
-import usefavorites from "@/hooks/usefavorites";
+import useFavorites from "@/hooks/useFavorites";
 import { AiOutlinePlus, AiOutlineCheck } from "react-icons/ai";
-import { isComputedPropertyName } from "typescript";
+
 
 interface FavoriteButtonProps {
   movieId: string;
 }
 
 const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
-  const { mutate: mutateFavorites } = usefavorites();
+  const { mutate: mutateFavorites } = useFavorites();
   const { data: currentUser, mutate } = useCurrentUser();
 
   const isFavorite = useMemo(() => {
