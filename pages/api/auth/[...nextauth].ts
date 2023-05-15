@@ -1,10 +1,10 @@
 import NextAuth, { AuthOptions } from "next-auth";
-import Credentials from "next-auth/providers/credentials";
-import prismadb from "@/lib/prismadb";
-import { compare } from "bcrypt";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
+import Credentials from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { compare } from "bcrypt";
+import prismadb from "@/lib/prismadb";
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -30,30 +30,29 @@ export const authOptions: AuthOptions = {
         },
       },
       async authorize(credentials) {
-        console.log("authorizing");
-        console.log(`${credentials?.email}`);
-        console.log(`${credentials?.password}`);
         if (!credentials?.email || !credentials?.password) {
-          console.log("Email and password required");
           throw new Error("Email and password required");
         }
+
         const user = await prismadb.user.findUnique({
           where: {
             email: credentials.email,
           },
         });
+
         if (!user || !user.hashedPassword) {
-          console.log("Email doesn't exist");
           throw new Error("Email does not exist");
         }
+
         const isCorrectPassword = await compare(
           credentials.password,
           user.hashedPassword
         );
+
         if (!isCorrectPassword) {
-          console.log("incorrect password");
           throw new Error("Incorrect password");
         }
+
         return user;
       },
     }),
@@ -69,4 +68,5 @@ export const authOptions: AuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
+
 export default NextAuth(authOptions);

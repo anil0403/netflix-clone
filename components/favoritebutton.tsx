@@ -21,9 +21,6 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
 
   const toggleFavorites = useCallback(async () => {
     let response;
-    console.log(` isFavorite = ${isFavorite}`);
-    console.log(` movieId = ${movieId}`);
-
     if (isFavorite) {
       response = await axios.post("/api/favoriteremove", {  movieId  });
     } else {
