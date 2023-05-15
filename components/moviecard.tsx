@@ -1,5 +1,6 @@
 import React from "react";
 import { BsFillPlayFill } from "react-icons/bs";
+import FavoriteButton from "./favoritebutton";
 interface MovieCardProps {
   data: Record<string, any>;
 }
@@ -24,7 +25,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         src={data.thumbnailUrl}
         alt="thumbnail"
       />
-      
+
       <div
         className="
       opacity-0
@@ -41,6 +42,8 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
       group-hover:-translate-y-[6vw]
       group-hover:-translate-x-[2vw]
       group-hover:opacity-100
+      group-hover:z-50
+
       "
       >
         <img
@@ -70,9 +73,13 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         "
         >
           <div className="flex flex-row items-center gap-3">
-            <div className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-white rounded-full flex justify-center items-center transition bg:bg-neutral-300">
+            <div
+              className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-white rounded-full flex justify-center items-center transition bg:bg-neutral-300"
+              onClick={() => {}}
+            >
               <BsFillPlayFill size={30} />
             </div>
+            <FavoriteButton movieId={data?.id} />
           </div>
           <p className="text-green-100 font-semibold mt-1">
             New <span className="text-white ">2003</span>
